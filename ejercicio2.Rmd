@@ -1,0 +1,53 @@
+---
+title: "Aprendiendo a usar RMarkdown"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Aprendiendo a conversar por R
+Hola *Nicko*, *Clem* y *Gus*, estoy aprendiendo el arte de **R**. Síganme para más tutoriales en el siguiente [link](www.google.cl)
+
+
+## Primeros análisis
+
+A continuación, analizo el número de plantas extintas por continente. Para esto, utilizo la base de datos de la **IUCN** disponible en [tidytuesday](https://raw.githubusercontent.com/rfordatascience/tidytuesday)
+
+```{r, include=FALSE, echo=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+```{r}
+plants <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv")
+actions <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/actions.csv")
+threats <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/threats.csv")
+```
+#Plantas extintas por contiente
+Las plantas extintas por continente se presentan en la siguiente tabla:
+
+
+
+
+
+
+## Including Code
+
+You can include R code in the document as follows:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
