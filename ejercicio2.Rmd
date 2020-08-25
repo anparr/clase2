@@ -1,5 +1,5 @@
 ---
-title: "Aprendiendo a usar RMarkdown"
+title: "Plantas extintas"
 output: github_document
 ---
 
@@ -7,11 +7,13 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Aprendiendo a conversar por R
-Hola *Nicko*, *Clem* y *Gus*, estoy aprendiendo el arte de **R**. Síganme para más tutoriales en el siguiente [link](www.google.cl)
+## Introducción
+La **extinción de especies** es un gran problema en la actualidad. La *pérdida de biodiversidad* puede conducir al colapso ecosistémico. A continuación exploraré las tendencias en la extinción de especies de plantas por continente.
 
+### Objetivos
+*1. Comparar el número de plantas extintas por continente*
 
-## Primeros análisis
+## Métodos
 
 A continuación, analizo el número de plantas extintas por continente. Para esto, utilizo la base de datos de la **IUCN** disponible en [tidytuesday](https://raw.githubusercontent.com/rfordatascience/tidytuesday)
 
@@ -21,11 +23,16 @@ library(knitr)
 library(kableExtra)
 ```
 
-```{r}
+```{r, include=FALSE, echo=FALSE}
 plants <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv")
 actions <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/actions.csv")
 threats <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/threats.csv")
 ```
+## Plantas extintas por continente
+
+by_continent <- dplyr::group_by(plants, continent) 
+by_continent2 <- dplyr::summarize(by_continent, )
+
 #Plantas extintas por contiente
 Las plantas extintas por continente se presentan en la siguiente tabla:
 
